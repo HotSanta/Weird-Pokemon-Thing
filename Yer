@@ -1,0 +1,283 @@
+import random
+
+print('Welcome to Battle')
+print('')
+global health
+global health2
+
+
+def play1():
+    global health2
+    global health
+    if health <= 0:
+        print('You lost')
+        print('')
+        choose()
+    print('Choose attack')
+    print('')
+    print('1.Kick')
+    print('')
+    print('2.Stab')
+    print('')
+    print('3.Slap')
+    print('')
+    play = input('Which Option:')
+    if play == '1':
+        print('')
+        print('You cast Kick')
+        print('')
+        health2 -= 85
+        print('Enemy health is {}'.format(health2))
+    if play == '2':
+        print('')
+        print('You cast Stab')
+        print('')
+        health2 -= 100
+        print('Enemy health is {}'.format(health2))
+    if play == '3':
+        print('')
+        print('You cast Slap')
+        print('')
+        health2 -= 55
+        print('Enemy health is {}'.format(health2))
+
+
+def one():   #lizard
+    global health
+    global health2
+    if health < 1:
+        print('You lost')
+        print('')
+        choose()
+    play = random.randint(1, 3)
+    if play == 1:
+        print('')
+        print('Lizard cast tail smack')
+        print('')
+        health -= 75
+        print('Your health is {}'.format(health))
+    if play == 2:
+        print('')
+        print('Lizard cast headbutt')
+        print('')
+        health -= 85
+        print('Your health is {}'.format(health))
+    if play == 3:
+        print('')
+        print('Lizard cast lick')
+        print('')
+        health -= 65
+        print('Your health is {}'.format(health))
+    play1()
+
+
+def two():  #snake
+    global health
+    global health2
+    if health < 1:
+        print('You lost')
+        print('')
+        choose()
+    play = random.randint(1, 3)
+    if play == 1:
+        print('')
+        print('Snake cast tail bite')
+        print('')
+        health -= 95
+        print('Your health is {}'.format(health))
+    if play == 2:
+        print('')
+        print('Snake cast Shake')
+        print('')
+        health -= 50
+        print('Your health is {}'.format(health))
+    if play == 3:
+        print('')
+        print('Snake cast Spit')
+        print('')
+        health -= 100
+        print('Your health is {}'.format(health))
+    play1()
+
+
+def thr():   #log
+    global health
+    global health2
+    if health < 1:
+        print('You lost')
+        print('')
+        choose()
+    play = random.randint(1, 3)
+    if play == 1:
+        print('')
+        print('Log cast tail thwack')
+        print('')
+        health -= 110
+        print('Your health is {}'.format(health))
+    if play == 2:
+        print('')
+        print('Log cast Sprout')
+        print('')
+        health -= 65
+        print('Your health is {}'.format(health))
+    if play == 3:
+        print('')
+        print('Log cast Seedlings')
+        print('')
+        health -= 30
+        print('Your health is {}'.format(health))
+    play1()
+
+
+def fore():  #david cho
+    global health
+    global health2
+    if health <= 0:
+        print('You lost')
+        print('')
+        choose()
+    play = random.randint(1, 3)
+    if play == 1:
+        print('')
+        print('David Cho cast rage')
+        print('')
+        health -= 150
+        print('Your health is {}'.format(health))
+    if play == 2:
+        print('')
+        print('David Cho cast bully')
+        print('')
+        health -= 85
+        print('Your health is {}'.format(health))
+    if play == 3:
+        print('')
+        print('David Cho cast Gabe')
+        print('')
+        health -= 20
+        print('Your health is {}'.format(health))
+    play1()
+
+
+def choose():
+    global health
+    global health2
+    health = 500
+    print('Choose your enemy')
+    print('')
+    print('1.Lizard')
+    print('')
+    print('2.Snake')
+    print('')
+    print('3.Log')
+    print('')
+    print('4.David Cho')
+    print('')
+    option = input('Which Option:')
+    if option == '1':
+        health2 = 350
+        print('')
+        print('You Choose Lizard')
+        print('')
+        opt = input('Are you sure(Yes or No):')
+        print('')
+        if opt == 'No':
+            print('')
+            choose()
+        elif opt == 'Yes':
+
+            while health > 0:
+                if health < 1:
+                    print('You lost')
+                    choose()
+                elif health2 < 1:
+                    print('You Won')
+                    print('')
+                    choose()
+                one()
+
+        elif opt != 'No' or opt != 'Yes':
+            print('')
+            print('Please choose an option')
+            choose()
+
+    if option == '2':
+        health2 = 400
+        print('')
+        print('You Choose Snake')
+        print('')
+        opt = input('Are you sure(Yes or No):')
+        print('')
+        if opt == 'No':
+            print('')
+            choose()
+        elif opt == 'Yes':
+            while health > 0:
+                if health < 1:
+                    print('You lost')
+                    choose()
+                elif health2 < 1:
+                    print('You Won')
+                    print('')
+                    choose()
+                two()
+        elif opt != 'No' or opt != 'Yes':
+            print('')
+            print('Please choose an option')
+            print('')
+            choose()
+
+    if option == '3':
+        health2 = 550
+        print('')
+        print('You Choose Log')
+        print('')
+        opt = input('Are you sure(Yes or No):')
+        print('')
+        if opt == 'Yes':
+            while health > 0:
+                if health < 1:
+                    print('You lost')
+                    choose()
+                elif health2 < 1:
+                    print('You Won')
+                    print('')
+                    choose()
+                thr()
+        elif opt == 'No':
+            print('')
+            choose()
+        elif opt != 'No' or opt != 'Yes':
+            print('')
+            print('Please choose an option')
+            print('')
+            choose()
+
+    if option == '4':
+        health2 = 700
+        print('')
+        print('You Choose David Cho')
+        print('')
+        opt = input('Are you sure(Yes or No):')
+        print('')
+        if opt == 'No':
+            print('')
+            choose()
+        elif opt == 'Yes':
+            while health > 0:
+                if health < 1:
+                    print('You lost')
+                    print('')
+                    choose()
+                elif health2 < 1:
+                    print('You Won')
+                    print('')
+                    choose()
+                fore()
+        elif opt != 'No' or opt != 'Yes':
+            print('')
+            print('Please choose an option')
+            print('')
+            choose()
+
+
+choose()
