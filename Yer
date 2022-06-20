@@ -4,30 +4,32 @@ print('Welcome to Battle')
 print('')
 global health
 global health2
+global poison
 
 
 def play1():
     global health2
     global health
+    global poison
     if health <= 0:
         print('You lost')
         print('')
         choose()
     print('Choose attack')
     print('')
-    print('1.Kick')
+    print('1.Heal')
     print('')
     print('2.Stab')
     print('')
-    print('3.Slap')
+    print('3.Poison Slap')
     print('')
     play = input('Which Option:')
     if play == '1':
         print('')
-        print('You cast Kick')
+        print('You cast heal')
         print('')
-        health2 -= 85
-        print('Enemy health is {}'.format(health2))
+        health += 50
+        print('Your health is {}'.format(health))
     if play == '2':
         print('')
         print('You cast Stab')
@@ -36,9 +38,14 @@ def play1():
         print('Enemy health is {}'.format(health2))
     if play == '3':
         print('')
-        print('You cast Slap')
+        print('You cast Poison Slap')
         print('')
-        health2 -= 55
+        health2 -= 25
+        poison = 3
+        print('Enemy health is {}'.format(health2))
+    elif poison > 0:
+        poison -= 1
+        health2 -= 25
         print('Enemy health is {}'.format(health2))
 
 
@@ -161,7 +168,9 @@ def fore():  #david cho
 def choose():
     global health
     global health2
+    global poison
     health = 500
+    poison = 0
     print('Choose your enemy')
     print('')
     print('1.Lizard')
