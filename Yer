@@ -227,6 +227,7 @@ def choose():
             choose()
     elif option == '999':
         print('\nProgram Ending')
+        exit()
     else:
         print('\nPlease choose an option\n')
         choose()
